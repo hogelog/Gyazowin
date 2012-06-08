@@ -8,3 +8,8 @@ output/
 *.suo
 *.ncb
 gyazowin.vcproj.*
+ipch/
+Gyazowin.vcxproj.filters
+Gyazowin.vcxproj.user
+*.sdf
+*.opensdf
