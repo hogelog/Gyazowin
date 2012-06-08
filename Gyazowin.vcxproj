@@ -74,6 +74,7 @@
     <ClCompile Include="gyazowin\stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gyazowin\config.h" />
     <ClInclude Include="gyazowin\gyazowin.h" />
     <ClInclude Include="gyazowin\resource.h" />
     <ClInclude Include="gyazowin\stdafx.h" />

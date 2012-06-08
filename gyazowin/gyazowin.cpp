@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "gyazowin.h"
+#include "config.h"
 
 // グローバル変数:
 HINSTANCE hInst;							// 現在のインターフェイス
@@ -791,8 +792,8 @@ BOOL saveId(const WCHAR* str)
 // PNG ファイルをアップロードする.
 BOOL uploadFile(HWND hwnd, LPCTSTR fileName)
 {
-	const TCHAR* UPLOAD_SERVER	= _T("gyazo.com");
-	const TCHAR* UPLOAD_PATH	= _T("/upload.cgi");
+	const TCHAR* UPLOAD_SERVER	= _T(GYAZO_HOST);
+	const TCHAR* UPLOAD_PATH	= _T(GYAZO_PATH);
 
 	const char*  sBoundary = "----BOUNDARYBOUNDARY----";		// boundary
 	const char   sCrLf[]   = { 0xd, 0xa, 0x0 };					// 改行(CR+LF)
@@ -858,7 +859,7 @@ BOOL uploadFile(HWND hwnd, LPCTSTR fileName)
 	
 	// 接続先
 	HINTERNET hConnection = InternetConnect(hSession, 
-		UPLOAD_SERVER, INTERNET_DEFAULT_HTTP_PORT,
+		UPLOAD_SERVER, GYAZO_PORT,
 		NULL, NULL, INTERNET_SERVICE_HTTP, 0, NULL);
 	if(NULL == hSession) {
 		MessageBox(hwnd, _T("Cannot initiate connection"),

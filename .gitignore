@@ -13,3 +13,4 @@ Gyazowin.vcxproj.filters
 Gyazowin.vcxproj.user
 *.sdf
 *.opensdf
+gyazowin/config.h
